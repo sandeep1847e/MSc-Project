@@ -1,0 +1,85 @@
+*************************************************************
+*        W E L C O M E  to  M A D A N A L Y S I S  5        *
+*                                                           *
+*   MA5 release : 1.9.60                       2024-10-01   *
+*                                                           *
+*         Comput. Phys. Commun. 184 (2013) 222-256          *
+*             Eur. Phys. J. C74 (2014) 3103                 *
+*************************************************************
+Executing the commands from the script
+...
+ma5>import /home/sandeep/software/MG5_aMC_v2_9_21/pp24tops/bin/internal/ufomodel
+UFO model folder is detected
+Import all particles defined in the model ...
+43 particles have been successfully exported.
+Adding 'gha' 'gha~' 've' 've~' 'vm' 'vm~' 'vt' 'vt~' to 'invisible' multiparticle
+ma5>import /home/sandeep/software/MG5_aMC_v2_9_21/pp24tops/Events/run_07/unweighted_events.lhe.gz as run_07
+   -> Storing the file 'unweighted_events.lhe.gz' in the dataset 'run_07'.
+ma5>define vl = 12 14 16
+ma5>define vl~ = -16 -14 -12
+ma5>define invisible = vt~ vt ve vm~ vm ve~ vl vl~
+ma5>set main.graphic_render = root
+ma5>plot THT   40 0 500 [logY]
+ma5>plot MET   40 0 500 [logY]
+ma5>plot SQRTS 40 0 500 [logY]
+ma5>plot  PT(t~[1]) 40 0  500 [logY]
+ma5>plot ETA(t~[1]) 40 -10 10 [logY]
+ma5>plot  PT(t~[2]) 40 0  500 [logY]
+ma5>plot ETA(t~[2]) 40 -10 10 [logY]
+ma5>plot  PT(t[1]) 40 0  500 [logY]
+ma5>plot ETA(t[1]) 40 -10 10 [logY]
+ma5>plot  PT(t[2]) 40 0  500 [logY]
+ma5>plot ETA(t[2]) 40 -10 10 [logY]
+ma5>plot M(t[1] t[2]) 40 0  500 [logY ]
+ma5>plot M(t~[1] t[1]) 40 0  500 [logY ]
+ma5>plot M(t~[1] t[1] t[2]) 40 0  500 [logY ]
+ma5>plot M(t~[1] t[2]) 40 0  500 [logY ]
+ma5>plot M(t~[1] t~[2]) 40 0  500 [logY ]
+ma5>plot M(t~[1] t~[2] t[1]) 40 0  500 [logY ]
+ma5>plot M(t~[1] t~[2] t[1] t[2]) 40 0  500 [logY ]
+ma5>plot M(t~[1] t~[2] t[2]) 40 0  500 [logY ]
+ma5>plot M(t~[2] t[1]) 40 0  500 [logY ]
+ma5>plot M(t~[2] t[1] t[2]) 40 0  500 [logY ]
+ma5>plot M(t~[2] t[2]) 40 0  500 [logY ]
+ma5>plot DELTAR(t[1],t[2]) 40 0 10 [logY ]
+ma5>plot DELTAR(t~[1],t[1]) 40 0 10 [logY ]
+ma5>plot DELTAR(t~[1],t[2]) 40 0 10 [logY ]
+ma5>plot DELTAR(t~[1],t~[2]) 40 0 10 [logY ]
+ma5>plot DELTAR(t~[2],t[1]) 40 0 10 [logY ]
+ma5>plot DELTAR(t~[2],t[2]) 40 0 10 [logY ]
+ma5>submit /home/sandeep/software/MG5_aMC_v2_9_21/pp24tops/MA5_PARTON_ANALYSIS_analysis1
+   Creating folder 'MA5_PARTON_ANALYSIS_analysis1'...
+   Copying 'SampleAnalyzer' source files...
+   Inserting your selection into 'SampleAnalyzer'...
+   Writing the list of datasets...
+   Writing the command line history...
+   Creating Makefiles...
+   Compiling 'SampleAnalyzer'...
+   Linking 'SampleAnalyzer'...
+   Running 'SampleAnalyzer' over dataset 'run_07'...
+    *******************************************************
+    * SampleAnalyzer for MadAnalysis 5 - Welcome.
+    * Initializing all components
+    - version: 1.10.9 (2023/02/07) [ python interface version: 1.9.60 (2024-10-01) ]
+    - general: everything is default.
+    - extracting the list of event samples...
+    - analyzer 'MadAnalysis5job'
+    * Running over files ...
+    * 1/1  /home/sandeep/software/MG5_aMC_v2_9_21/pp24tops/Events/run_07/unweighted_events.lhe.gz
+    => file size: 23.49 Mo
+    => sample format: LHE file produced by MadGraph5.
+    => total number of events: 20000 ( analyzed: 20000 ; skipped: 0 )
+    * Finalizing all components ...
+    * Total number of processed events: 20000.
+    * Goodbye.
+    *******************************************************
+   Checking SampleAnalyzer output...
+   Extracting data from the output files...
+   Preparing data for the reports ...
+   Generating all plots ...
+   Generating the HMTL report ...
+     -> To open this HTML report, please type 'open'.
+   Generating the PDF report ...
+     -> To open this PDF report, please type 'open pp24tops/MA5_PARTON_ANALYSIS_analysis1/Output/PDF/MadAnalysis5job_0'.
+   Generating the DVI report ...
+   Well done! Elapsed time = 24.95 seconds

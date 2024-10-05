@@ -1,0 +1,70 @@
+*************************************************************
+*        W E L C O M E  to  M A D A N A L Y S I S  5        *
+*                                                           *
+*   MA5 release : 1.9.60                       2024-10-01   *
+*                                                           *
+*         Comput. Phys. Commun. 184 (2013) 222-256          *
+*             Eur. Phys. J. C74 (2014) 3103                 *
+*************************************************************
+Package used for graphical rendering: [32mRoot[0m
+Executing the commands from the script
+...
+ma5>import /home/sandeep/software/MG5_aMC_v2_9_21/pp24tops/Events/run_07/tag_1_pythia8_BasicReco.lhe.gz as tag_1_pythia8_BasicReco
+   -> Storing the file 'tag_1_pythia8_BasicReco.lhe.gz' in the dataset 'tag_1_pythia8_BasicReco'.
+ma5>set main.stacking_method = normalize2one
+ma5>define e = e+ e-
+ma5>define mu = mu+ mu-
+ma5>select (j)  PT > 20
+ma5>select (b)  PT > 20
+ma5>select (e)  PT > 10
+ma5>select (mu) PT > 10
+ma5>select (j)  ABSETA < 2.5
+ma5>select (b)  ABSETA < 2.5
+ma5>select (e)  ABSETA < 2.5
+ma5>select (mu) ABSETA < 2.5
+ma5>plot MET 40 0 500
+ma5>plot THT 40 0 500
+ma5>plot PT(j[1]) 40 0 500 [logY]
+ma5>plot ETA(j[1]) 40 -10 10 [logY]
+ma5>plot MT_MET(j[1]) 40 0 500 [logY]
+ma5>plot PT(j[2]) 40 0 500 [logY]
+ma5>plot ETA(j[2]) 40 -10 10 [logY]
+ma5>plot MT_MET(j[2]) 40 0 500 [logY]
+ma5>plot M(j[1] j[2]) 40 0  500 [logY]
+ma5>plot DELTAR(j[1],j[2]) 40 0 10 [logY]
+ma5>submit /home/sandeep/software/MG5_aMC_v2_9_21/pp24tops/MA5_HADRON_ANALYSIS_analysis2_BasicReco
+   Creating folder 'MA5_HADRON_ANALYSIS_analysis2_BasicReco'...
+   Copying 'SampleAnalyzer' source files...
+   Inserting your selection into 'SampleAnalyzer'...
+   Writing the list of datasets...
+   Writing the command line history...
+   Creating Makefiles...
+   Compiling 'SampleAnalyzer'...
+   Linking 'SampleAnalyzer'...
+   Running 'SampleAnalyzer' over dataset 'tag_1_pythia8_basicreco'...
+    *******************************************************
+    * SampleAnalyzer for MadAnalysis 5 - Welcome.
+    * Initializing all components
+    - version: 1.10.9 (2023/02/07) [ python interface version: 1.9.60 (2024-10-01) ]
+    - general: everything is default.
+    - extracting the list of event samples...
+    - analyzer 'MadAnalysis5job'
+    * Running over files ...
+    * 1/1  /home/sandeep/software/MG5_aMC_v2_9_21/pp24tops/Events/run_07/tag_1_pythia8_BasicReco.lhe.gz
+    => file size: 30.05 Mo
+    => sample format: simplified LHE file produced by MadAnalysi5.
+    => total number of events: 20000 ( analyzed: 20000 ; skipped: 0 )
+    * Finalizing all components ...
+    * Total number of processed events: 20000.
+    * Goodbye.
+    *******************************************************
+   Checking SampleAnalyzer output...
+   Extracting data from the output files...
+   Preparing data for the reports ...
+   Generating all plots ...
+   Generating the HMTL report ...
+     -> To open this HTML report, please type 'open'.
+   Generating the PDF report ...
+     -> To open this PDF report, please type 'open pp24tops/MA5_HADRON_ANALYSIS_analysis2_BasicReco/Output/PDF/MadAnalysis5job_0'.
+   Generating the DVI report ...
+   Well done! Elapsed time = 21.60 seconds
