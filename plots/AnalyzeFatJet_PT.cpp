@@ -13,6 +13,10 @@ void AnalyzeFatJet_PT() {
 
     TCanvas *c5 = new TCanvas("c5", "Fat Jet PT Distribution", 800, 600);
     hFatJetPT->Draw();
+    c5->SetLogy();
+
+    // Update the canvas to reflect changes
+    c5->Update();
     c5->SaveAs("FatJet_PT.png");
 
     delete f;
